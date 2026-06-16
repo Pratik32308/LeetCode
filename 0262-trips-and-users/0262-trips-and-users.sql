@@ -3,7 +3,7 @@
 SELECT
 request_at Day,
 round(
-    (sum(case when status IN ('cancelled_by_driver','cancelled_by_client') then 1 else 0 end)/ Count(status)),2) "Cancellation Rate"
+    (sum(case when status IN ('cancelled_by_driver','cancelled_by_client') then 1 else 0 end)/ Count(*)),2) "Cancellation Rate"
 FROM Trips T 
 JOIN Users U 
 ON T.client_id=U.users_id AND U.banned='No'
