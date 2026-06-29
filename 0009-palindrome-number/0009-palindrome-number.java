@@ -5,7 +5,7 @@ class Solution {
         }
         int rev=0;
         int pal=x;
-       while(x!=0){
+       while(x>0){
         int LD=x%10;
          rev = rev*10 + LD;
         x=x/10;
